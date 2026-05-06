@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation</title>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    input {
+        display: block;
+        margin: 15px auto;
+        padding: 10px;
+        width: 250px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter Your name">
+    <input type="text" id="mobile" placeholder="Enter Mobile Number">
+    <input type="text" id="email" placeholder="Enter Email">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+    let mobile = document.getElementById("mobile").value;
+    let email = document.getElementById("email").value;
+
+    // Mobile validation
+    if (mobile.length !== 10 || isNaN(mobile)) {
+        alert("Mobile number must be exactly 10 digits");
+        return false;
+    }
+
+    // Extra digits alert
+    if (mobile.length > 10) {
+        alert("Only 10 digits allowed!");
+        return false;
+    }
+
+    // Email validation
+    if (!email.includes("@")) {
+        alert("Email must contain @");
+        return false;
+    }
+
+    alert("Form Submitted Successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>

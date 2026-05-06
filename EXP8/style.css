@@ -1,0 +1,22 @@
+body {
+    font-family: Arial;
+    background: #a2add0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h5{
+    align-items: bottom;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+}
